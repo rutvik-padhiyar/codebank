@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swipejs/2.3.1/style.min.css">
+</head>
+
+<body>
+    <div class="swiper swiper-product">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="product__img">
+                    <img src="images/product-1.jpg" alt="product image">
+                </div>
+                <div class="product__content">
+                    <p>Gold Neckwear</p>
+                    <p class="product__price"><span class="discount">₹220</span> <span>₹140</span></p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="product__img">
+                    <img src="images/product-2.jpg" alt="product image">
+                </div>
+                <div class="product__content">
+                    <p>Crystal Silver Necklace</p>
+                    <p class="product__price"><span class="discount">₹220</span> <span>₹140</span></p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="product__img">
+                    <img src="images/product-3.jpg" alt="product image">
+                </div>
+                <div class="product__content">
+                    <p>Kerala Necklace</p>
+                    <p class="product__price"><span class="discount">₹220</span> <span>₹140</span></p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="product__img">
+                    <img src="images/product-2.jpg" alt="product image">
+                </div>
+                <div class="product__content">
+                    <p>Gold Neckwear</p>
+                    <p class="product__price"><span class="discount">₹220</span> <span>₹140</span></p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="product__img">
+                    <img src="images/product-1.jpg" alt="product image">
+                </div>
+                <div class="product__content">
+                    <p>Gold Neckwear</p>
+                    <p class="product__price"><span class="discount">₹220</span> <span>₹140</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination "></div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swipejs/2.3.1/swipe.min.js"></script>
+<script>
+    const swiper2 = new Swiper('.swiper-product', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-product-button-next',
+            prevEl: '.swiper-product-button-prev',
+        },
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
+        spaceBetween: 30,
+        slidesPerView: 3,
+        loop: true,
+
+
+    });
+</script>
+
+</html>

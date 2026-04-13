@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBank Intro System</title>
+    <!-- 1) COMMON INTRO CSS: put this before scripts -->
+    <link rel="stylesheet" href="./intro.css">
+    <!-- 2) GSAP REQUIRED LINK: keep this before intro.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <!-- 3) INTRO ENGINE JS -->
+    <script src="./intro.js" defer></script>
+</head>
+
+<body data-landing="true">
+    <div id="intro" aria-hidden="true">
+        <div class="intro-backdrop" aria-hidden="true"></div>
+        <div class="intro-shape intro-shape-a" aria-hidden="true"></div>
+        <div class="intro-shape intro-shape-b" aria-hidden="true"></div>
+        <img id="introLogo" src="https://dummyimage.com/200x200/111111/f9f7f3.png&text=CB" alt="CodeBank logo">
+        <h1 id="introBrand">CodeBank</h1>
+        <button id="introSkip" type="button" aria-label="Skip intro">Skip</button>
+    </div>
+
+    <header id="siteHeader">
+        <a href="#" class="brand-link" aria-label="CodeBank Home">
+            <img id="headerLogo" src="https://dummyimage.com/96x96/111111/f9f7f3.png&text=CB" alt="CodeBank logo">
+            <span>CodeBank</span>
+        </a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Snippets</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main id="siteContent" class="content-hidden">
+        <section>
+            <h2>Intro Engine Demo</h2>
+            <p>Main content yaha hai. Intro complete hone ke baad yahi show hoga.</p>
+        </section>
+    </main>
+
+</body>
+
+</html>

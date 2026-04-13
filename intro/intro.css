@@ -1,0 +1,130 @@
+/*
+  INTRO CSS ONLY
+  Keep your website/body/header styles in your main stylesheet.
+  This file should only contain intro-engine related rules.
+*/
+
+
+/* =========================================================
+   COMMON INTRO CSS (required for all intro animations)
+   ========================================================= */
+
+:root {
+    --intro-bg: #111111;
+    --intro-text: #ffffff;
+    --intro-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: var(--intro-bg);
+    color: var(--intro-text);
+}
+
+.intro-backdrop {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(232, 97, 44, 0.42), transparent 48%), radial-gradient(circle at 80% 70%, rgba(247, 186, 131, 0.35), transparent 45%), linear-gradient(145deg, #0f0f0f 0%, #151515 50%, #0f0f0f 100%);
+}
+
+.intro-shape {
+    position: absolute;
+    width: min(40vw, 340px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.intro-shape-a {
+    left: -10%;
+    top: 6%;
+    background: radial-gradient(circle at 30% 30%, #ffd5a3, transparent 70%);
+}
+
+.intro-shape-b {
+    right: -12%;
+    bottom: 8%;
+    background: radial-gradient(circle at 50% 50%, #ff8c59, transparent 70%);
+}
+
+#introLogo {
+    position: relative;
+    z-index: 3;
+    width: clamp(92px, 16vw, 190px);
+    border-radius: 24px;
+    box-shadow: var(--intro-shadow);
+    will-change: transform, opacity, filter;
+}
+
+#introBrand {
+    position: relative;
+    z-index: 3;
+    margin-top: 18px;
+    letter-spacing: 0.05em;
+    font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+    font-weight: 600;
+}
+
+#introSkip {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 4;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+
+/* Hide your content until intro completes (optional but recommended). */
+
+.content-hidden {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   INTRO 1 CSS (Logo Center -> Header)
+   Extra CSS needed: none (uses common CSS + JS animation)
+   ========================================================= */
+
+
+/* =========================================================
+   INTRO 2 CSS (Fade + Zoom)
+   Extra CSS needed: none
+   ========================================================= */
+
+
+/* =========================================================
+   INTRO 3 CSS (Split Reveal)
+   Extra CSS needed: none
+   ========================================================= */
+
+
+/* =========================================================
+   INTRO 4 CSS (Typing Brand)
+   Extra CSS needed: none
+   ========================================================= */
+
+
+/* =========================================================
+   INTRO 5 CSS (Loader Spin)
+   Extra CSS needed: none
+   ========================================================= */
+
+
+/* =========================================================
+   INTRO 6 CSS (Blur to Sharp)
+   Extra CSS needed: none
+   ========================================================= */

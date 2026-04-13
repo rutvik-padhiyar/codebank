@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: #fff;
+            padding: 10px;
+            animation: sticky-header-animation 0.5s ease forwards;
+        }
+        
+        @keyframes sticky-header-animation {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header" id="header">
+        <div class="container  ">
+            <div class="site-logo left-animate">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="BUSION">
+                </a>
+            </div>
+            <div class="menu-toggle">☰</div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Otheers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script>
+        var header = $("#header");
+        var sticky = header.offset().top;
+        $(window).on("scroll", function() {
+            if ($(window).scrollTop() > sticky) {
+                header.addClass("sticky");
+            } else {
+                header.removeClass("sticky");
+            }
+        });
+    </script>
+</body>
+
+</html>

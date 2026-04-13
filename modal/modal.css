@@ -1,0 +1,109 @@
+/* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 47, 67, 0.5);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    overflow: auto;
+}
+
+.modal .modal__dialog {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+    min-height: calc(100% - 60px);
+}
+
+.modal .modal__content {
+    max-width: 810px;
+    width: 100%;
+    background-color: #fff;
+    padding: 35px 70px;
+    position: relative;
+    -webkit-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    transform: translateY(-100px);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    margin: 30px auto;
+}
+
+.modal .close {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+    color: #fff;
+    background-color: #65D08D;
+}
+
+.modal .close:hover {
+    background: #132F43;
+}
+
+.modal h2 {
+    line-height: 1.25;
+    color: #65D08D;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-open .modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.show .modal__content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.modal.modal--sm .modal__content {
+    max-width: 500px;
+}
+
+.modal.modal--member .modal__content {
+    padding: 0;
+}
+
+.form-group input {
+    padding: 20px 24px;
+    border: 2px solid #65D08D;
+}
+
+.wpcf7-submit {
+    background-color: #65D08D;
+    color: #132F43;
+    padding: 19px 36px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.wpcf7-submit:hover {
+    background-color: #132F43;
+    color: #65D08D;
+}
+
+
+/* modal close */

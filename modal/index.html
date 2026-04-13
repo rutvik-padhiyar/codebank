@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 47, 67, 0.5);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    overflow: auto;
+}
+
+.modal .modal__dialog {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+    min-height: calc(100% - 60px);
+}
+
+.modal .modal__content {
+    max-width: 810px;
+    width: 100%;
+    background-color: #fff;
+    padding: 35px 70px;
+    position: relative;
+    -webkit-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    transform: translateY(-100px);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    margin: 30px auto;
+}
+
+.modal .close {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+    color: #fff;
+    background-color: #65D08D;
+}
+
+.modal .close:hover {
+    background: #132F43;
+}
+
+.modal h2 {
+    line-height: 1.25;
+    color: #65D08D;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-open .modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.show .modal__content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.modal.modal--sm .modal__content {
+    max-width: 500px;
+}
+
+.modal.modal--member .modal__content {
+    padding: 0;
+}
+
+.form-group input {
+    padding: 20px 24px;
+    border: 2px solid #65D08D;
+}
+
+.wpcf7-submit {
+    background-color: #65D08D;
+    color: #132F43;
+    padding: 19px 36px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.wpcf7-submit:hover {
+    background-color: #132F43;
+    color: #65D08D;
+}
+
+
+/* modal close */
+    </style>
+</head>
+
+<body>
+
+    <!-- modal  -->
+    <div id="download_brochure" class="modal modal--sm" tabindex="-1">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <a href="#download_brochure" role="button" class="close" data-close="true">
+                    <svg width="40" height="40" viewBox="0 0 40 40">
+                    <path fill="currentColor"
+                        d="M29.165,28.104c0.293,0.293,0.293,0.768,0,1.061c-0.146,0.146-0.338,0.22-0.53,0.22s-0.384-0.073-0.53-0.22 l-8.105-8.104l-8.105,8.104c-0.146,0.146-0.338,0.22-0.53,0.22s-0.384-0.073-0.53-0.22c-0.293-0.293-0.293-0.768,0-1.061L18.938,20 l-8.105-8.105c-0.293-0.293-0.293-0.768,0-1.061s0.768-0.293,1.061,0l8.105,8.105l8.105-8.105c0.293-0.293,0.768-0.293,1.061,0 s0.293,0.768,0,1.061L21.06,20L29.165,28.104z" />
+                </svg>
+                </a>
+                <h2>Download Brochure</h2>
+
+                <div class="wpcf7 no-js" id="wpcf7-f384-o2" lang="en-US" dir="ltr">
+                    <div class="screen-reader-response">
+                        <p role="status" aria-live="polite" aria-atomic="true"></p>
+                        <ul></ul>
+                    </div>
+                    <form action="/#wpcf7-f384-o2" method="post" class="modal--form" aria-label="Contact form" novalidate="novalidate" data-status="init">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="384" />
+                            <input type="hidden" name="_wpcf7_version" value="5.9.8" />
+                            <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f384-o2" />
+                            <input type="hidden" name="_wpcf7_container_post" value="0" />
+                            <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group form-group--floating">
+                                <p><span class="wpcf7-form-control-wrap" data-name="yourname"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Name*" value="" type="text" name="yourname" /></span>
+                                </p>
+                            </div>
+                            <div class="form-group form-group--floating">
+                                <p><span class="wpcf7-form-control-wrap" data-name="email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email*" value="" type="email" name="email" /></span>
+                                </p>
+                            </div>
+                            <div class="form-group form-group--floating">
+                                <p><span class="wpcf7-form-control-wrap" data-name="phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" aria-required="true" aria-invalid="false" placeholder="Number" value="" type="tel" name="phone" /></span>
+                                </p>
+                            </div>
+                            <div class="form-group form-group--floating">
+                                <p><span class="wpcf7-form-control-wrap" data-name="company"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="company" aria-required="true" aria-invalid="false" placeholder="Company Name*" value="" type="text" name="company" /></span>
+                                </p>
+                            </div>
+                            <p><input class="wpcf7-form-control wpcf7-submit has-spinner btn btn--green btn--180" type="submit" value="Submit" />
+                            </p>
+                        </div>
+                        <div class="wpcf7-response-output" aria-hidden="true"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            const modal = () => {
+        const $modal = $('[data-modal]');
+        const $close = $('[data-close]');
+        const $body = $('body');
+        const open = 'modal-open';
+        const show = 'show';
+
+        $modal.on('click', function() {
+            const id = $(this).data('modal');
+
+            $body.addClass(open);
+            $(id).addClass(show);
+        });
+
+        $close.on('click', function() {
+            $body.removeClass(open);
+            $('.modal').removeClass(show);
+            return false;
+        });
+    }
+
+    modal();
+    </script>
+</body>
+
+</html>

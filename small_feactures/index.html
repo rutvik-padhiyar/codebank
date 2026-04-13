@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- requirements cdn files -->
+    <!-- counter -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-car.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <!-- text typing effect -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+
+    <!-- ui based  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/dot-luv/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+
+    <!-- end requirements -->
+
+
+    <!-- scroll to top button -->
+    <button id="scrollToTopBtn">Scroll to Top</button>
+
+
+    <!-- text typing effect -->
+    <h3>We <span class="tped__effect">Design</span> B2B Websites</h3>
+
+
+    <!-- counter -->
+    <h2>
+        <div class="odometer" id="counter1">0</div>
+        <span class="about-active">+</span>
+    </h2>
+    <h2>
+        <div class="odometer" id="counter2">0</div>
+        <span class="about-active">+</span>
+    </h2>
+
+
+    <!-- date picker -->
+    <p>Date: <input type="text" id="mydate"></p>
+
+
+    <!-- range slider -->
+    <div id="slider-range"></div>
+    <p>
+        <label for="amount">Price range:</label>
+        <input type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;">
+    </p>
+
+    <script>
+        // Scroll to top functionality
+        $('#scrollTopBtn').on('click', function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 600);
+        });
+
+
+        // Text typing effect
+        var typed = new Typed('.tped__effect', {
+            strings: ["Design", "Build", "Analize", "Optimze"],
+            typeSpeed: 150,
+            loop: true,
+        });
+
+        var typed = new Typed('.tped__effect-2', {
+            strings: ["Design", "Build", "Analize", "Optimze"],
+            typeSpeed: 150,
+            loop: true,
+        });
+
+
+
+        // counter
+
+        const counters = [{
+            id: 'counter1',
+            value: 22
+        }, {
+            id: 'counter2',
+            value: 89
+        }, {
+            id: 'counter3',
+            value: 698
+        }, {
+            id: 'counter4',
+            value: 29
+        }, ];
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = counters.find((c) => c.id === el.id);
+                        el.innerHTML = target.value;
+                        observer.unobserve(el);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            }
+        );
+
+        counters.forEach((c) => {
+            observer.observe(document.getElementById(c.id));
+        });
+
+
+        // date picker
+        $('#mydate').datepicker();
+
+
+        // range slider
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [101, 312],
+            slide: function(event, ui) {
+                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
+
+        $("#amount").val(
+            "$" + $("#slider-range").slider("values", 0) +
+            " - $" + $("#slider-range").slider("values", 1)
+        );
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        
+        .cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        /* Small dot */
+        
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: #d4af37;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        /* Ring */
+        
+        .cursor-outline {
+            width: 42px;
+            height: 42px;
+            border: 1px solid #e6c36a;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+            transition: box-shadow 0.3s ease;
+        }
+        /* Cursor text */
+        
+        .cursor-text {
+            position: absolute;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #ffffff;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script>
+        const dot = document.querySelector(".cursor-dot");
+        const outline = document.querySelector(".cursor-outline");
+        const text = document.querySelector(".cursor-text");
+
+        window.addEventListener("mousemove", (e) => {
+            gsap.to(dot, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.08
+            });
+
+            gsap.to(outline, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.35,
+                ease: "power3.out"
+            });
+
+            gsap.to(text, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.35,
+                ease: "power3.out"
+            });
+        });
+        // btn and links
+        document.querySelectorAll("a, button").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                gsap.to(outline, {
+                    scale: 1.7,
+                    borderColor: "#d4af37",
+                    boxShadow: "0 0 18px rgba(212,175,55,0.55)",
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            el.addEventListener("mouseleave", () => {
+                gsap.to(outline, {
+                    scale: 1,
+                    borderColor: "#e6c36a",
+                    boxShadow: "0 0 12px rgba(212,175,55,0.35)",
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
