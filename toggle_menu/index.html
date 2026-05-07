@@ -127,4 +127,172 @@
 </body>
 
 
+</html>   
+
+<!--  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Simple Responsive Toggle Menu">
+    <meta name="keywords" content="HTML CSS JavaScript Navbar">
+    <meta name="author" content="Rutvik">
+
+    <title>Simple Navbar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background-color: #222;
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Menu */
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: orange;
+        }
+
+        /* Toggle Button */
+
+        .menu-toggle {
+            width: 35px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu-toggle img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 577px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+                flex-direction: column;
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+                background-color: #333;
+
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+            <a href="#">LOGO</a>
+        </div>
+
+        <!-- Toggle Image -->
+
+        <div class="menu-toggle">
+
+            <!-- 3 Line Menu Image -->
+
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="menu">
+
+        </div>
+
+        <!-- Menu Links -->
+
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#">About</a></li>
+
+            <li><a href="#">Services</a></li>
+
+            <li><a href="#">Blog</a></li>
+
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        var menuBtn = document.querySelector(".menu-toggle");
+
+        var navMenu = document.querySelector(".nav-links");
+
+        menuBtn.onclick = function () {
+
+            navMenu.classList.toggle("active");
+
+        };
+
+    </script>
+
+</body>
+
 </html>
